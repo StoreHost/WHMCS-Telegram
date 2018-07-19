@@ -76,6 +76,7 @@ function wt_note_output($vars) {
 		<input type="checkbox" name="wt_notefication[new_update]" value="1" id="wt_notefications_new_update" '.($permissions['new_update'] == "1" ? "checked" : "").'> <label for="wt_notefications_new_update">Antwort auf Ticket</label><br>
 		<input type="checkbox" name="wt_notefication[new_ticket]" value="1" id="wt_notefications_new_ticket" '.($permissions['new_ticket'] == "1" ? "checked" : "").'> <label for="wt_notefications_new_ticket">Ticket erstellt wurde</label><br>
 		<input type="checkbox" name="wt_notefication[new_download]" value="1" id="wt_notefications_new_download" '.($permissions['new_download'] == "1" ? "checked" : "").'> <label for="wt_notefications_new_download">Eine Datei runtergeladen wurde.</label><br>
+		<input type="checkbox" name="wt_notefication[new_clientverification]" value="1" id="wt_notefications_clientverification" '.($permissions['clientverification'] == "1" ? "checked" : "").'> <label for="wt_notefications_clientverification">Wenn ein nutzer sich Verifiziert.</label><br>
 		</td>
 		</tr>
 		</table>

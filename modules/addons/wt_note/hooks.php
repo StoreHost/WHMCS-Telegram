@@ -48,12 +48,14 @@ function wt_note_FileDownloaded($vars) {
 	global $customadminpath, $CONFIG;
 	sendTelegramMessage("Es wurde eine Datei runtergeladen \n---------------------------------------------------------------------------------------------- \n\n Dateiname : $vars[filename] \n\n SeitenURL : $vars[pagetitle] \n\n". $CONFIG['SystemURL'].'/'.$customadminpath.'/clientssummary.php?userid='.$vars['userid']);
 }
-
+function wt_note_FileDownloaded($vars) {
+	global $customadminpath, $CONFIG;
+	sendTelegramMessage("Ein Benutzer hat seine Email Verifiziert \n---------------------------------------------------------------------------------------------- \n\n Benutzer-ID : $vars[deptname] \n\n". $CONFIG['SystemURL'].'/'.$customadminpath.'/clientssummary.php?userid='.$vars['userid']);
+}
 
 add_hook("ClientAdd",1,"wt_note_ClientAdd");
 add_hook("InvoicePaid",1,"wt_note_InvoicePaid");
 add_hook("TicketOpen",1,"wt_note_TicketOpen");
 add_hook("TicketUserReply",1,"wt_note_TicketUserReply");
-
-####
-add_hook("FileDownload",1,"wt_note_FileDownloaded");
+add_hook("ClientAreaPage",1,"wt_note_FileDownloaded");
+add_hook("ClientEmailVerificationComplete",1,"wt_note_EmailVertification")
